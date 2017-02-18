@@ -21,8 +21,48 @@ namespace Wardrobe.Controllers
 			return View(articles.ToList());
         }
 
-        // GET: Articles/Details/5
-        public ActionResult Details(int? id)
+		// GET: Articles (Tops)
+		public ActionResult Tops()
+		{
+			var articles = db.Articles.Include(a => a.Material1);
+			var query = from a in db.Articles
+						where a.Type.Contains("Top")
+						select a;
+			return View(query);
+		}
+
+		// GET: Articles (Bottoms)
+		public ActionResult Bottoms()
+		{
+			var articles = db.Articles.Include(a => a.Material1);
+			var query = from a in db.Articles
+						where a.Type.Contains("Bottom")
+						select a;
+			return View(query);
+		}
+
+		// GET: Articles (Shoes)
+		public ActionResult Shoes()
+		{
+			var articles = db.Articles.Include(a => a.Material1);
+			var query = from a in db.Articles
+						where a.Type.Contains("Shoes")
+						select a;
+			return View(query);
+		}
+
+		// GET: Articles (Accessories)
+		public ActionResult Accessories()
+		{
+			var articles = db.Articles.Include(a => a.Material1);
+			var query = from a in db.Articles
+						where a.Type.Contains("Accessory")
+						select a;
+			return View(query);
+		}
+
+		// GET: Articles/Details/5
+		public ActionResult Details(int? id)
         {
             if (id == null)
             {

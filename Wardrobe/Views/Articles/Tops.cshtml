@@ -1,25 +1,13 @@
 ﻿@model IEnumerable<Wardrobe.Models.Article>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tops";
 }
 
-<h2>Index</h2>
+<h2>Tops</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
-</p>
-<p>
-	@Html.ActionLink("Tops", "Tops")
-</p>
-<p>
-	@Html.ActionLink("Bottoms", "Bottoms")
-</p>
-<p>
-	@Html.ActionLink("Shoes", "Shoes")
-</p>
-<p>
-	@Html.ActionLink("Accessories", "Accessories")
 </p>
 <table class="table">
     <tr>
@@ -42,7 +30,7 @@
             @Html.DisplayNameFor(model => model.Occasion)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Material)
+            @Html.DisplayNameFor(model => model.Material1.Name)
         </th>
         <th></th>
     </tr>
