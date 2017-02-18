@@ -73,6 +73,7 @@ namespace Wardrobe.Controllers
             {
                 return HttpNotFound();
             }
+			ViewBag.Photo = article.Photo;
             return View(article);
         }
 

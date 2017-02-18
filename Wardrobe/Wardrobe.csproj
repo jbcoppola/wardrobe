@@ -196,6 +196,10 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>WardrobeModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Content\images\accessoriesicon.png" />
+    <Content Include="Content\images\bottomicon.png" />
+    <Content Include="Content\images\shoeicon.png" />
+    <Content Include="Content\images\topicon.png" />
     <Content Include="Models\WardrobeModel.edmx.diagram">
       <DependentUpon>WardrobeModel.edmx</DependentUpon>
     </Content>
