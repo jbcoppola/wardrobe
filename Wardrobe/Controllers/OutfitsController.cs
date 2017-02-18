@@ -10,114 +10,120 @@ using Wardrobe.Models;
 
 namespace Wardrobe.Controllers
 {
-    public class ArticlesController : Controller
+    public class OutfitsController : Controller
     {
         private WardrobeEntities db = new WardrobeEntities();
 
-        // GET: Articles
+        // GET: Outfits
         public ActionResult Index()
         {
-            var articles = db.Articles.Include(a => a.Material1).Include(a => a.ArticleOccasions);
-			return View(articles.ToList());
+            var outfits = db.Outfits.Include(o => o.Article).Include(o => o.Article1).Include(o => o.Article2).Include(o => o.OutfitAccessories);
+            return View(outfits.ToList());
         }
 
-        // GET: Articles/Details/5
+        // GET: Outfits/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Article article = db.Articles.Find(id);
-            if (article == null)
+            Outfit outfit = db.Outfits.Find(id);
+            if (outfit == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(outfit);
         }
 
-        // GET: Articles/Create
+        // GET: Outfits/Create
         public ActionResult Create()
         {
-            ViewBag.Material = new SelectList(db.Materials, "MaterialID", "Name");
-			ViewBag.Occasion = new SelectList(db.Occasions, "OccasionID", "Name");
+            ViewBag.Bottom = new SelectList(db.Articles, "ArticleID", "Name");
+            ViewBag.Shoes = new SelectList(db.Articles, "ArticleID", "Name");
+            ViewBag.Top = new SelectList(db.Articles, "ArticleID", "Name");
             return View();
         }
 
-        // POST: Articles/Create
+        // POST: Outfits/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ArticleID,Name,Photo,Type,Color,Season,Occasion,Material")] Article article)
+        public ActionResult Create([Bind(Include = "OutfitID,Top,Bottom,Shoes")] Outfit outfit)
         {
             if (ModelState.IsValid)
             {
-                db.Articles.Add(article);
+                db.Outfits.Add(outfit);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Material = new SelectList(db.Materials, "MaterialID", "Name", article.Material);
-            return View(article);
+            ViewBag.Bottom = new SelectList(db.Articles, "ArticleID", "Name", outfit.Bottom);
+            ViewBag.Shoes = new SelectList(db.Articles, "ArticleID", "Name", outfit.Shoes);
+            ViewBag.Top = new SelectList(db.Articles, "ArticleID", "Name", outfit.Top);
+            return View(outfit);
         }
 
-        // GET: Articles/Edit/5
+        // GET: Outfits/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Article article = db.Articles.Find(id);
-            if (article == null)
+            Outfit outfit = db.Outfits.Find(id);
+            if (outfit == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Material = new SelectList(db.Materials, "MaterialID", "Name", article.Material);
-			ViewBag.Occasion = new SelectList(db.Occasions, "OccasionID", "Name", article.Occasion);
-			return View(article);
+            ViewBag.Bottom = new SelectList(db.Articles, "ArticleID", "Name", outfit.Bottom);
+            ViewBag.Shoes = new SelectList(db.Articles, "ArticleID", "Name", outfit.Shoes);
+            ViewBag.Top = new SelectList(db.Articles, "ArticleID", "Name", outfit.Top);
+            return View(outfit);
         }
 
-        // POST: Articles/Edit/5
+        // POST: Outfits/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ArticleID,Name,Photo,Type,Color,Season,Occasion,Material")] Article article)
+        public ActionResult Edit([Bind(Include = "OutfitID,Top,Bottom,Shoes")] Outfit outfit)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(article).State = EntityState.Modified;
+                db.Entry(outfit).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Material = new SelectList(db.Materials, "MaterialID", "Name", article.Material);
-            return View(article);
+            ViewBag.Bottom = new SelectList(db.Articles, "ArticleID", "Name", outfit.Bottom);
+            ViewBag.Shoes = new SelectList(db.Articles, "ArticleID", "Name", outfit.Shoes);
+            ViewBag.Top = new SelectList(db.Articles, "ArticleID", "Name", outfit.Top);
+            return View(outfit);
         }
 
-        // GET: Articles/Delete/5
+        // GET: Outfits/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Article article = db.Articles.Find(id);
-            if (article == null)
+            Outfit outfit = db.Outfits.Find(id);
+            if (outfit == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(outfit);
         }
 
-        // POST: Articles/Delete/5
+        // POST: Outfits/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Article article = db.Articles.Find(id);
-            db.Articles.Remove(article);
+            Outfit outfit = db.Outfits.Find(id);
+            db.Outfits.Remove(outfit);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

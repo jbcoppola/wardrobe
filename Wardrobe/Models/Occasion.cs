@@ -9,18 +9,19 @@
 
 namespace Wardrobe.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class Occasion
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Occasion()
-        {
-            this.ArticleOccasions = new HashSet<ArticleOccasion>();
-        }
-    
+	using System;
+	using System.Collections.Generic;
+	using System.ComponentModel.DataAnnotations;
+
+	public partial class Occasion
+	{
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+		public Occasion()
+		{
+			this.ArticleOccasions = new HashSet<ArticleOccasion>();
+		}
         public int OccasionID { get; set; }
+
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

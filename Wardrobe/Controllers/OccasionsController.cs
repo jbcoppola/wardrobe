@@ -10,114 +10,107 @@ using Wardrobe.Models;
 
 namespace Wardrobe.Controllers
 {
-    public class ArticlesController : Controller
+    public class OccasionsController : Controller
     {
         private WardrobeEntities db = new WardrobeEntities();
 
-        // GET: Articles
+        // GET: Occasions
         public ActionResult Index()
         {
-            var articles = db.Articles.Include(a => a.Material1).Include(a => a.ArticleOccasions);
-			return View(articles.ToList());
+            return View(db.Occasions.ToList());
         }
 
-        // GET: Articles/Details/5
+        // GET: Occasions/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Article article = db.Articles.Find(id);
-            if (article == null)
+            Occasion occasion = db.Occasions.Find(id);
+            if (occasion == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(occasion);
         }
 
-        // GET: Articles/Create
+        // GET: Occasions/Create
         public ActionResult Create()
         {
-            ViewBag.Material = new SelectList(db.Materials, "MaterialID", "Name");
-			ViewBag.Occasion = new SelectList(db.Occasions, "OccasionID", "Name");
             return View();
         }
 
-        // POST: Articles/Create
+        // POST: Occasions/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ArticleID,Name,Photo,Type,Color,Season,Occasion,Material")] Article article)
+        public ActionResult Create([Bind(Include = "OccasionID,Name")] Occasion occasion)
         {
             if (ModelState.IsValid)
             {
-                db.Articles.Add(article);
+                db.Occasions.Add(occasion);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Material = new SelectList(db.Materials, "MaterialID", "Name", article.Material);
-            return View(article);
+            return View(occasion);
         }
 
-        // GET: Articles/Edit/5
+        // GET: Occasions/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Article article = db.Articles.Find(id);
-            if (article == null)
+            Occasion occasion = db.Occasions.Find(id);
+            if (occasion == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Material = new SelectList(db.Materials, "MaterialID", "Name", article.Material);
-			ViewBag.Occasion = new SelectList(db.Occasions, "OccasionID", "Name", article.Occasion);
-			return View(article);
+            return View(occasion);
         }
 
-        // POST: Articles/Edit/5
+        // POST: Occasions/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ArticleID,Name,Photo,Type,Color,Season,Occasion,Material")] Article article)
+        public ActionResult Edit([Bind(Include = "OccasionID,Name")] Occasion occasion)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(article).State = EntityState.Modified;
+                db.Entry(occasion).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Material = new SelectList(db.Materials, "MaterialID", "Name", article.Material);
-            return View(article);
+            return View(occasion);
         }
 
-        // GET: Articles/Delete/5
+        // GET: Occasions/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Article article = db.Articles.Find(id);
-            if (article == null)
+            Occasion occasion = db.Occasions.Find(id);
+            if (occasion == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(occasion);
         }
 
-        // POST: Articles/Delete/5
+        // POST: Occasions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Article article = db.Articles.Find(id);
-            db.Articles.Remove(article);
+            Occasion occasion = db.Occasions.Find(id);
+            db.Occasions.Remove(occasion);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
