@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+	font-family: Rubik, sans-serif;
+	background-color: rgb(90,151,158);
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +23,47 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/*GENERIC ELEMENTS*/
+.transparent-blackbox {
+	background-color: rgb(51,51,51);
+	color: white;
+}
+.text-center {
+	text-align: center;
+}
+.container .jumbotron {
+	border-radius: 0px;
+	background-color: rgba(255,255,255,0.0);
+	margin: 0px;
+}
+
+/*MAIN PAGE HEADER*/
+.main-header {
+	margin-bottom: 30px;
+}
+.main-header .jumbotron {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%
+}
+.main-header .jumbotron h2 {
+	font-size: 30px;
+	font-weight: bold;
+	align-self: center;
+	text-align: center;
+}
+.header-logo {
+	margin-top: 15px;
+}
+
+/*MAIN PAGE ITEMS*/
+.sidebar {
+	padding: 15px;
+}
+
+.sidebar h2 {
+	font-weight: bold;
 }
