@@ -10,37 +10,37 @@
 
 
 <div class="row button-row">
-		@Html.ActionLink("New", "Create", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-2 btn btn-info btn-link transparent-blackbox" })
-		@Html.ActionLink("Tops", "Tops", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-2 btn btn-info btn-link transparent-blackbox" })
-		@Html.ActionLink("Bottoms", "Bottoms", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-2 btn btn-info btn-link transparent-blackbox" })
-		@Html.ActionLink("Shoes", "Shoes", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-2 btn btn-info btn-link transparent-blackbox" })
-		@Html.ActionLink("Accessories", "Accessories", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-3 btn btn-info btn-link transparent-blackbox" })
+	@Html.ActionLink("New", "Create", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-2 btn btn-info btn-link transparent-blackbox" })
+	@Html.ActionLink("Tops", "Tops", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-2 btn btn-info btn-link transparent-blackbox" })
+	@Html.ActionLink("Bottoms", "Bottoms", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-2 btn btn-info btn-link transparent-blackbox" })
+	@Html.ActionLink("Shoes", "Shoes", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-2 btn btn-info btn-link transparent-blackbox" })
+	@Html.ActionLink("Accessories", "Accessories", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-3 btn btn-info btn-link transparent-blackbox" })
 </div>
-	<div class="row list-index transparent-blackbox name-header hidden-xs">
-		<div class="col-sm-2">
-			@Html.DisplayNameFor(model => model.Name)
-		</div>
-		<!--
-		<div>
-			Html.DisplayNameFor(model => model.Photo)
-		</div>
-		-->
-		<div class="col-sm-2">
-			@Html.DisplayNameFor(model => model.Type)
-		</div>
-		<div class="col-sm-1">
-			@Html.DisplayNameFor(model => model.Color)
-		</div>
-		<div class="col-sm-1">
-			@Html.DisplayNameFor(model => model.Season)
-		</div>
-		<div class="col-sm-1">
-			@Html.DisplayNameFor(model => model.Occasion)
-		</div>
-		<div class="col-sm-2">
-			@Html.DisplayNameFor(model => model.Material)
-		</div>
+<div class="row list-index transparent-blackbox name-header hidden-xs">
+	<div class="col-sm-2">
+		@Html.DisplayNameFor(model => model.Name)
 	</div>
+	<!--
+	<div>
+		Html.DisplayNameFor(model => model.Photo)
+	</div>
+	-->
+	<div class="col-sm-2">
+		@Html.DisplayNameFor(model => model.Type)
+	</div>
+	<div class="col-sm-1">
+		@Html.DisplayNameFor(model => model.Color)
+	</div>
+	<div class="col-sm-1">
+		@Html.DisplayNameFor(model => model.Season)
+	</div>
+	<div class="col-sm-1">
+		@Html.DisplayNameFor(model => model.Occasion)
+	</div>
+	<div class="col-sm-2">
+		@Html.DisplayNameFor(model => model.Material)
+	</div>
+</div>
 @foreach (var item in Model)
 {
 	<div class="row list-index transparent-blackbox">

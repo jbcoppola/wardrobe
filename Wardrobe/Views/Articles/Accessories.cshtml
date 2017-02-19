@@ -3,67 +3,62 @@
 @{
     ViewBag.Title = "Accessories";
 }
-
+@section header {
 <h2>Accessories</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Color)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Season)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Occasion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Material1.Name)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Photo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Color)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Season)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Occasion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Material1.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ArticleID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ArticleID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ArticleID })
-        </td>
-    </tr>
 }
+<div class="row button-row">
+	@Html.ActionLink("New", "Create", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-2 btn btn-info btn-link transparent-blackbox" })
+</div>
+<div class="row list-index transparent-blackbox name-header hidden-xs">
+	<div class="col-sm-2">
+		@Html.DisplayNameFor(model => model.Name)
+	</div>
+	<div class="col-sm-1">
+		@Html.DisplayNameFor(model => model.Type)
+	</div>
+	<div class="col-sm-1">
+		@Html.DisplayNameFor(model => model.Color)
+	</div>
+	<div class="col-sm-1">
+		@Html.DisplayNameFor(model => model.Season)
+	</div>
+	<div class="col-sm-1">
+		@Html.DisplayNameFor(model => model.Occasion)
+	</div>
+	<div class="col-sm-2">
+		@Html.DisplayNameFor(model => model.Material1.Name)
+	</div>
+</div>
 
-</table>
+@foreach (var item in Model)
+{
+	<div class="row list-index transparent-blackbox">
+		<div class="col-sm-2">
+			@Html.DisplayFor(modelItem => item.Name)
+		</div>
+		<div class="col-sm-1">
+			@Html.DisplayFor(modelItem => item.Type)
+		</div>
+		<div class="col-sm-1">
+			@Html.DisplayFor(modelItem => item.Color)
+		</div>
+		<div class="col-sm-1">
+			@Html.DisplayFor(modelItem => item.Season)
+		</div>
+		<div class="col-sm-1">
+			@Html.DisplayFor(modelItem => item.Occasion)
+		</div>
+		<div class="col-sm-2">
+			@Html.DisplayFor(modelItem => item.Material1.Name)
+		</div>
+		<div class="col-sm-1">
+			@Html.ActionLink("Edit", "Edit", new { id = item.ArticleID })
+		</div>
+		<div class="col-sm-1">
+			@Html.ActionLink("Details", "Details", new { id = item.ArticleID })
+		</div>
+		<div class="col-sm-1">
+			@Html.ActionLink("Delete", "Delete", new { id = item.ArticleID })
+		</div>
+	</div>
+}

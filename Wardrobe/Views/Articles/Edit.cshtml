@@ -3,17 +3,15 @@
 @{
 	ViewBag.Title = "Edit";
 }
-
+@section header {
 <h2>Edit</h2>
-
+}
 
 @using (Html.BeginForm())
 {
 	@Html.AntiForgeryToken()
 
-	<div class="form-horizontal">
-		<h4>Article</h4>
-		<hr />
+	<div class="transparent-blackbox padded-box form-horizontal">
 		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 		@Html.HiddenFor(model => model.ArticleID)
 
@@ -91,12 +89,13 @@
 				<input type="submit" value="Save" class="btn btn-default" />
 			</div>
 		</div>
+		<div>
+			@Html.ActionLink("Back to List", "Index")
+		</div>
 	</div>
 }
 
-<div>
-	@Html.ActionLink("Back to List", "Index")
-</div>
+
 
 @section Scripts {
 	@Scripts.Render("~/bundles/jqueryval")

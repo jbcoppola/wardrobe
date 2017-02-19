@@ -44,6 +44,9 @@ textarea {
 div .well {
 	border-radius: 0px;
 }
+.padded-box {
+	padding: 30px;
+}
 /*MAIN PAGE HEADER*/
 .main-header {
 	margin-bottom: 30px;
@@ -159,6 +162,7 @@ div .well {
 .details-view {
 	font-size: 15px;
 	font-weight: bold;
+	margin-bottom: 10px;
 }
 .details-view .row {
 	margin: 10px;
