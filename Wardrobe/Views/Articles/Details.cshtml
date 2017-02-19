@@ -1,74 +1,77 @@
 ﻿@model Wardrobe.Models.Article
 
 @{
-    ViewBag.Title = "Details";
+	ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+@section header {
+	<h2>Details</h2>
+}
 
 <div>
-    <h4>Article</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Photo)
-        </dt>
-
-        <dd>
-            <img src="@Url.Content(ViewBag.Photo)" />
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Color)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Color)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Season)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Season)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Occasion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Occasion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Material1.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Material1.Name)
-        </dd>
-
-    </dl>
+	<hr />
+	<div class="col-md-12 details-view transparent-blackbox">
+		<div class="row">
+			<div class="col-xs-6 right-align">
+				@Html.DisplayNameFor(model => model.Name)
+			</div>
+			<div class="col-xs-6">
+				@Html.DisplayFor(model => model.Name)
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 right-align">
+				@Html.DisplayNameFor(model => model.Photo)
+			</div>
+			<div class="col-xs-6">
+				<img src="@Url.Content(ViewBag.Photo)" class="img-responsive item-icon" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 right-align">
+				@Html.DisplayNameFor(model => model.Type)
+			</div>
+			<div class="col-xs-6">
+				@Html.DisplayFor(model => model.Type)
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 right-align">
+				@Html.DisplayNameFor(model => model.Color)
+			</div>
+			<div class="col-xs-6">
+				@Html.DisplayFor(model => model.Color)
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 right-align">
+				@Html.DisplayNameFor(model => model.Season)
+			</div>
+			<div class="col-xs-6">
+				@Html.DisplayFor(model => model.Season)
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 right-align">
+				@Html.DisplayNameFor(model => model.Occasion)
+			</div>
+			<div class="col-xs-6">
+				@Html.DisplayFor(model => model.Occasion)
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 right-align">
+				@Html.DisplayNameFor(model => model.Material1.Name)
+			</div>
+			<div class="col-xs-6">
+				@Html.DisplayFor(model => model.Material1.Name)
+			</div>
+		</div>
+	</div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ArticleID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="row transparent-blackbox text-center">
+	<p>
+		@Html.ActionLink("Edit", "Edit", new { id = Model.ArticleID }) |
+		@Html.ActionLink("Back to List", "Index")
+	</p>
+</div>

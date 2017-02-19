@@ -1,7 +1,8 @@
 ﻿@{
 	ViewBag.Title = "Home Page";
 }
-
+@section header {
+}
 <div class="row main-header transparent-blackbox">
 	<div class="col-lg-8 jumbotron">
 			<span><img src="~/Content/images/logo.png" class="img-responsive header-logo"/></span>
@@ -20,13 +21,20 @@
 			outfits without the hassle of getting everything out and messy.
 		</p>
 	</div>
-	<div class="col-lg-8">
-		<div class="row">
-			<div class="col-sm-4">
-
+	<div class="col-lg-7 centercol">
+		<div class="row transparent-blackbox">
+			<div class="col-sm-3 thumbnail">
+				<img src="~/Content/images/shoeicon.png" />
+				<p><h1>Main Admin</h1></p>
 			</div>
-			<div class="col-sm-8">
-
+			<div class="col-sm-9 well">
+				<p><h1>Nam euismod lorem sit amet enim commodo tempus. </h1></p>
+				<p><h2>Integer sollicitudin 
+					libero id nisi scelerisque luctus. Mauris tristique volutpat dui ut fringilla. 
+					Quisque vel magna at odio consectetur elementum. Morbi ac leo pharetra, sodales 
+					diam eget, facilisis dui. Maecenas ac sem est. Quisque sodales magna a mattis 
+					volutpat. Nunc at semper quam, id sollicitudin lorem. Maecenas fringilla ut enim 
+					sit amet dictum. Maecenas vitae leo cursus, finibus turpis et, egestas leo.</h2></p>
 			</div>
 		</div>
 	</div>
@@ -37,5 +45,3 @@
 		</p>
 	</div>
 </div>
-@section header {
-}

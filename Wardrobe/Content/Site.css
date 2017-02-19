@@ -33,12 +33,17 @@ textarea {
 .text-center {
 	text-align: center;
 }
+.right-align {
+	text-align: right;
+}
 .container .jumbotron {
 	border-radius: 0px;
 	background-color: rgba(255,255,255,0.0);
 	margin: 0px;
 }
-
+div .well {
+	border-radius: 0px;
+}
 /*MAIN PAGE HEADER*/
 .main-header {
 	margin-bottom: 30px;
@@ -63,7 +68,103 @@ textarea {
 .sidebar {
 	padding: 15px;
 }
-
 .sidebar h2 {
 	font-weight: bold;
+}
+
+.centercol {
+	margin: 0px 10px;
+}
+.centercol .well {
+	border-radius: 0px;
+	border: 10px solid rgb(51,51,51);
+	color: rgb(51,51,51)
+}
+.centercol .thumbnail {
+	border: 10px solid rgb(51,51,51);
+	border-radius: 10px;
+}
+.centercol .thumbnail h1 {
+	color: rgb(51,51,51);
+	font-size: 18px;
+	text-align: center;
+	margin: 0px;
+}
+.centercol .well h1 {
+	font-size: 18px;
+	font-weight: bold;
+}
+.centercol .well h2 {
+	font-size: 14px;
+}
+
+/*LAYOUT PAGE ITEMS*/
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 15px;
+}
+.footer p{
+	margin: 0px;
+}
+.header {
+	margin-bottom: 20px;
+}
+.header h2 {
+	display: flex;
+	vertical-align: middle;
+	justify-content: center;
+	font-size: 30px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 30px;
+}
+/*LIST ITEMS*/
+.button-row {
+	padding: 0px 15px;
+}
+.list-index {
+	margin: 5px 0px;
+}
+.list-index.transparent-blackbox {
+	font-size: 15px;
+	text-align: center;
+	padding: 15px;
+	font-weight: bold;
+}
+.list-index.transparent-blackbox.name-header {
+	margin: 20px 0px;
+	color: white;
+}
+.transparent-blackbox.btn {
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	border: none;
+	padding: 10px 20px;
+	margin: 0px 10px 0px 0px;
+}
+.transparent-blackbox.btn:hover, 
+.transparent-blackbox.btn:focus, 
+.transparent-blackbox.btn:active, 
+.transparent-blackbox.btn.active {
+    background-color: rgb(159,159,159);
+	text-decoration:none;
+	border: none;
+}
+
+/*DETAILS VIEW*/
+.details-view {
+	font-size: 15px;
+	font-weight: bold;
+}
+.details-view .row {
+	margin: 10px;
+}
+.item-icon {
+	max-height: 100px;
+	max-width: 100px;
+	border-radius: 5px;
 }

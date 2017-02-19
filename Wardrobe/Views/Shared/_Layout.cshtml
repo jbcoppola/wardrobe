@@ -32,14 +32,14 @@
 		</div>
 	</div>
 	<div class="container body-content">
-		<div class="row">
+		<div class="row header transparent-blackbox">
 			@RenderSection("header")
 		</div>
 		<div class="">
 			@RenderBody()
 		</div>
 		<hr />
-		<footer>
+		<footer class="row transparent-blackbox footer">
 			<p>&copy; @DateTime.Now.Year - Wardrobe</p>
 		</footer>
 	</div>
