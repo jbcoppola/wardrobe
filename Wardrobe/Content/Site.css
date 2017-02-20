@@ -47,6 +47,9 @@ div .well {
 .padded-box {
 	padding: 30px;
 }
+.bold {
+	font-weight: bold;
+}
 /*MAIN PAGE HEADER*/
 .main-header {
 	margin-bottom: 30px;
@@ -157,7 +160,6 @@ div .well {
 	text-decoration:none;
 	border: none;
 }
-
 /*DETAILS VIEW*/
 .details-view {
 	font-size: 15px;

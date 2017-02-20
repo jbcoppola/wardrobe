@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>@ViewBag.Title - My ASP.NET Application</title>
+	<title>@ViewBag.Title - Wardrobe</title>
 	@Styles.Render("~/Content/css")
 	@Scripts.Render("~/bundles/modernizr")
 	<link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One|Rubik:400,700,900" rel="stylesheet">
@@ -21,6 +21,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
+					<!--There wasn't time to work on the outfits page, so it's just articles-->
 					<li>@Html.ActionLink("Articles", "Index", "Articles")</li>
 					<li>@Html.ActionLink("About", "About", "Home")</li>
 					<li>@Html.ActionLink("Contact", "Contact", "Home")</li>
@@ -29,13 +30,17 @@
 		</div>
 	</div>
 	<div class="container body-content">
+		<!--The header for every page gets its own box-->
 		<div class="row header transparent-blackbox">
-			@RenderSection("header")
+			@RenderSection("header", false)
 		</div>
+		<!--Since the front page, details pages and list pages all have different styling for the main body this
+			goes unused. Might be better to have a few different optional rendersections..?-->
 		<div class="">
 			@RenderBody()
 		</div>
 		<hr />
+		<!--Footer is also by itself-->
 		<footer class="row transparent-blackbox footer">
 			<p>&copy; @DateTime.Now.Year - Wardrobe</p>
 		</footer>

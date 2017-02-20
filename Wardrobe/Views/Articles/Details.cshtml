@@ -1,5 +1,7 @@
 ﻿@model Wardrobe.Models.Article
 
+<!--Displays list of properties for one specific article of clothing-->
+
 @{
 	ViewBag.Title = "Details";
 }
@@ -10,7 +12,9 @@
 
 <div>
 	<hr />
+	<!--Main box starts here-->
 	<div class="col-md-12 details-view transparent-blackbox">
+		<!--A row for every property-->
 		<div class="row">
 			<div class="col-xs-6 right-align">
 				@Html.DisplayNameFor(model => model.Name)

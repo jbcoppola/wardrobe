@@ -1,8 +1,8 @@
 ﻿@{
 	ViewBag.Title = "Home Page";
 }
-@section header {
-}
+<!--Top header box. The main logo text is too big to keep up with dynamically resizing page elements, 
+	so it works best as a picture-->
 <div class="row main-header transparent-blackbox">
 	<div class="col-lg-8 jumbotron">
 			<span><img src="~/Content/images/logo.png" class="img-responsive header-logo"/></span>
@@ -12,7 +12,8 @@
 	</div>
 </div>
 
-
+<!--Main content row-->
+<!---->
 <div class="row">
 	<div class="col-lg-2 sidebar transparent-blackbox text-center">
 		<h2>Why use Wardrobe?</h2>
@@ -21,6 +22,10 @@
 			outfits without the hassle of getting everything out and messy.
 		</p>
 	</div>
+	<!--The center column. 
+		Meant as an area the admins can display a list of posts updating their userbase to changes.
+		A mobile-app targeted site might have a different layout than this but I wanted to show different 
+		possibilites for the CSS styling-->
 	<div class="col-lg-7 centercol">
 		<div class="row transparent-blackbox">
 			<div class="col-sm-3 thumbnail">
@@ -41,7 +46,8 @@
 	<div class="col-lg-2 sidebar transparent-blackbox text-center">
 		<h2>What does Wardrobe track?</h2>
 		<p>
-			Every article of clothing has its name, color, type, and material stored.
+			Every article of clothing has its name, color, type, and material stored in our central database, 
+			accessable through our "Articles" page.
 		</p>
 	</div>
 </div>

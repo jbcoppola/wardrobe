@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<Wardrobe.Models.Article>
 
+<!--List view of every article of clothing at once. If I had more time I would want to tweak the theme since right
+	now every element tends to look the same at a glance, making distinguishing the key components take longer-->
 @{
 	ViewBag.Title = "Index";
 }
@@ -8,7 +10,7 @@
 	<h2>Article Index</h2>
 }
 
-
+<!--Five buttons that create a new item, or sort the list into one of four categories-->
 <div class="row button-row">
 	@Html.ActionLink("New", "Create", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-2 btn btn-info btn-link transparent-blackbox" })
 	@Html.ActionLink("Tops", "Tops", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-2 btn btn-info btn-link transparent-blackbox" })
@@ -16,6 +18,9 @@
 	@Html.ActionLink("Shoes", "Shoes", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-2 btn btn-info btn-link transparent-blackbox" })
 	@Html.ActionLink("Accessories", "Accessories", "Articles", routeValues: null, htmlAttributes: new { @class = "col-xs-12 col-sm-3 btn btn-info btn-link transparent-blackbox" })
 </div>
+<!--The property names bar. At the top. I wanted to find a way to distinguish it from the rest of the list but changing 
+	the colors clashed with the rest of the theme and there wasn't enough room to change the font to something bolder, 
+	so I ended up just increasing its margins.-->
 <div class="row list-index transparent-blackbox name-header hidden-xs">
 	<div class="col-sm-2">
 		@Html.DisplayNameFor(model => model.Name)
@@ -41,6 +46,7 @@
 		@Html.DisplayNameFor(model => model.Material)
 	</div>
 </div>
+<!--Every item is on its own line-->
 @foreach (var item in Model)
 {
 	<div class="row list-index transparent-blackbox">
@@ -49,7 +55,7 @@
 		</div>
 		<!--
 			<div class="col-xs-1 well">
-				Html.DisplayFor(modelItem => item.Photo)
+				Html.DisplayFor(modelItem => item.Photo) <-- It might look good to have the icon on the far left? Possibilities...
 			</div>
 			-->
 		<div class="col-sm-2">
@@ -62,11 +68,16 @@
 			@Html.DisplayFor(modelItem => item.Season)
 		</div>
 		<div class="col-sm-1">
+			<!--This displays the OccasionID from the linking table rather than the Occasion Name. I attempted
+				to fix this, first by specifying Occasion.Name, item.Occasion1.Name etc but it kept giving me
+				"ambigous type" errors. I then moved on to attempting to pass the linking table information in the
+				controller but never got the view and controller working together, so it remains unsolved-->
 			@Html.DisplayFor(modelItem => item.Occasion)
 		</div>
 		<div class="col-sm-2">
 			@Html.DisplayFor(modelItem => item.Material1.Name)
 		</div>
+		<!--These might work better as buttons?-->
 		<div class="col-sm-1">
 			@Html.ActionLink("Edit", "Edit", new { id = item.ArticleID })
 		</div>

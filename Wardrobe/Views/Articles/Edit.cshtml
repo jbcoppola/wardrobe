@@ -1,5 +1,7 @@
 ﻿@model Wardrobe.Models.Article
 
+<!--Allows the user to edit any one article's properties-->
+
 @{
 	ViewBag.Title = "Edit";
 }
@@ -34,6 +36,7 @@
 		<div class="form-group">
 			@Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
+				<!--Dropdown with four list items to choose from-->
 				@Html.DropDownListFor(model => model.Type, new List<SelectListItem>
 			   {
 					new SelectListItem { Text = "Top", Value = "Top" },
@@ -94,8 +97,6 @@
 		</div>
 	</div>
 }
-
-
 
 @section Scripts {
 	@Scripts.Render("~/bundles/jqueryval")
